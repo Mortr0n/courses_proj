@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang='en-US'>
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Courses Home</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div id='wrapper'>
+        <div id='course_add'>
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li {% if message.tags %} class="{{message.tags}}" 
+                    {% endif %}>
+                    {{message}}
+                </li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            <h2>Add a new course</h2>
+            <form action="/create" method="POST">
+            {% csrf_token %}
+            
+                <label for="name_input">Name</label>
+                <input name="name_input" type="text">
+                <label for="desc_input">Description</label>
+                <textarea name="desc_input" cols="30" rows="5"></textarea>
+                <button type="submit">Add</button>
+            </form>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Course Name</th>
+                    <th>Description</th>
+                    <th>Date Added</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for course in all_courses %}
+                <tr>
+                    <td>{{course.name}} </td>
+                    <td>{{course.desc.desc}}</td>
+                    <td>{{course.created_at}}</td>
+                    <td>
+                        <form action="/destroy-yn/{{course.id}}" method="POST">
+                            {% csrf_token %}
+                            <button type="submit" value="{{course.id}}">Remove</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
