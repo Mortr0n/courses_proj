@@ -12,19 +12,22 @@
     <div id='wrapper'>
         <div>
             <h2>Are you sure that you want to delete the following course?</h2>
-            <div id="label_box">
-                <p>Name:</p>
-                <p>Description</p>
+            <div id="label_box" class="horizontal">
+                <p class="bold">Name</p>
+                <p class="bold">Description</p>
             </div>
-            <div id="info_box">
+            <div id="info_box" class="horizontal">
                 <p>{{this_course.name}}</p>
                 <p>{{this_course.desc.desc}}</p>
             </div>
-            <a href="/"><button>No</button> </a>
+            <div class="horizontal">
+                <a href="/"><button class="styled_button">No I don't</button> </a>
             <form action="/destroy/{{this_course.id}}" method="POST">
                 {% csrf_token %}
-            <button type="submit" value="{{this_course.id}}">Yes! I want to delete this</button>
+            <button class="red_button" type="submit" value="{{this_course.id}}">Yes! I want to delete this</button>
             </form>
+            </div>
+            
         </div>
     </div>
 </body>

@@ -1,7 +1,7 @@
 * { /* Got this from https://perishablepress.com/a-killer-collection-of-global-css-reset-styles/ */
 	vertical-align: baseline;
 	font-weight: inherit;
-	font-family: inherit;
+	font-family: 'Indie Flower', cursive;
 	font-style: inherit;
 	font-size: 100%;
 	border: 0 none;
@@ -13,5 +13,96 @@
 #wrapper {
     width: 900px;
     margin: 0 auto;
-    background-color: rgb(218, 246, 248);
+    background: rgb(15,224,28);
+    background: radial-gradient(circle, rgba(15,224,28,0.7819502801120448) 0%,
+    rgba(172,237,46,1) 8%, rgba(71,195,17,0.9948354341736695) 78%);
+    border: 3px solid darkgoldenrod;
+    border-radius: 25px;
+    padding: 10px;
+}
+
+.header {
+    width: 860px;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 0 20px 0;
+}
+
+#course_add {
+    display: flex;
+    flex-direction: column;
+}
+
+.form_box {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 20px 0 40px 0;
+}
+textarea, input {
+    border: 1px solid black;
+    vertical-align:middle;
+}
+
+label {
+    font-weight: 900;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+.body table {
+    margin: 10px 0 0 0;
+}
+
+.body {
+    width: 860px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.overflow {
+    word-wrap: break-word;
+    width: 350px;
+    padding: 5px 10px 5px 25px;
+}
+
+.overflow:hover {
+    overflow: visible;
+}
+
+.styled_button {
+    color: black;
+    background: rgb(174,237,238);
+    background: radial-gradient(circle, rgb(228, 238, 94) 0%, rgb(248, 252, 5) 8%, rgba(209, 165, 21, 0.995) 78%);
+    border-radius: 5px;
+    border: 2px solid darkgreen;
+    padding: 3px;
+}
+
+.red_button {
+    background: rgb(174,237,238);
+    background: radial-gradient(circle, rgb(253, 84, 5) 0%, rgb(252, 5, 5) 8%, rgba(236, 143, 21, 0.995) 78%);
+    border-radius: 5px;
+    border: 2px solid darkred;
+    padding: 3px;
+}
+
+a button, a{
+    color: white;
+    text-decoration: underline;
+    background-color: transparent;
+}
+
+.horizontal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.bold {
+    font-weight: 900;
 }

@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponse, redirect
 from django.contrib import messages
-from .models import Course, Desc
+from .models import Course, Desc, Comment
 
 
 def index(request):
@@ -33,3 +33,23 @@ def destroy(request, course_id):
         delete_course.delete()
         return redirect('/')
     return redirect('/')
+
+def comments(request, course_id):
+    
+    context = {
+        'this_course' : Course.objects.get(id=course_id),
+        'all_comments' : Comment.objects.filter(course=Course.objects.get(id=course_id)),
+    }
+    return render(request, 'comments.html', context)
+
+def comment_create(request, course_id):
+    
+    if request.method == 'POST':
+        new_comment = Comment.objects.create(course=Course.objects.get(id=course_id), comment=request.POST['comment_input'])
+    return redirect(f'/comments/{course_id}')
+
+def comment_destroy(request, course_id, comment_id):
+    if request.method == 'POST':
+        delete_comment = Comment.objects.get(id=comment_id)
+        delete_comment.delete()
+    return redirect(f'/comments/{course_id}')

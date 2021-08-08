@@ -21,16 +21,19 @@
                 {% endfor %}
             </ul>
             {% endif %}
-            <h2>Add a new course</h2>
-            <form action="/create" method="POST">
-            {% csrf_token %}
+            <h1>Add a new course</h1>
+            <div class="form_box">
+                <form action="/create" method="POST">
+                    {% csrf_token %}
+                    
+                        <label for="name_input">Name</label>
+                        <input name="name_input" type="text">
+                        <label for="desc_input">Description</label>
+                        <textarea name="desc_input" cols="30" rows="2"></textarea>
+                        <button class="styled_button" type="submit">Add</button>
+                    </form>
+            </div>
             
-                <label for="name_input">Name</label>
-                <input name="name_input" type="text">
-                <label for="desc_input">Description</label>
-                <textarea name="desc_input" cols="30" rows="5"></textarea>
-                <button type="submit">Add</button>
-            </form>
         </div>
         <table>
             <thead>
@@ -45,14 +48,19 @@
                 {% for course in all_courses %}
                 <tr>
                     <td>{{course.name}} </td>
-                    <td>{{course.desc.desc}}</td>
+                    <td>
+                        <div class="overflow">
+                            {{course.desc.desc}}
+                        </div>
+                    </td>
                     <td>{{course.created_at}}</td>
                     <td>
                         <form action="/destroy-yn/{{course.id}}" method="POST">
                             {% csrf_token %}
-                            <button type="submit" value="{{course.id}}">Remove</button>
+                            <button class="styled_button" type="submit" value="{{course.id}}">Remove</button>
                         </form>
                     </td>
+                    <td><a href="/comments/{{course.id}}"><button>Comments</button></a></td>
                 </tr>
                 {% endfor %}
             </tbody>
