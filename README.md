@@ -1,5 +1,5 @@
 
-Project for class making a quick app to add courses and comments using one to many and one to one relationships
+<h1 align="center">Project for class making a quick app to add courses and comments using one to many and one to one relationships</h1>
 <h1 align="center"> Courses Project</h1>
 <h2 align="center">
 Django full stack learning project 
@@ -11,18 +11,18 @@ Django full stack learning project
   All Courses and Add Courses Page
   </h2>
   <p align="center">
-  <img src="">
+  <img src="https://github.com/Mortr0n/courses_proj/blob/75f8f1521ef7f3bf60b3cc0626e00419889fb85f/addnewcourse.PNG">
   </p>
   <h2 align="center">
   Delete yes/no Page
   </h2>
    <p align="center">
-<img src="">
+<img src="https://github.com/Mortr0n/courses_proj/blob/75f8f1521ef7f3bf60b3cc0626e00419889fb85f/delete_or_not.PNG">
   </p>
   <h2 align="center">
   All comments and add comments page
   </h2>
    <p align="center">
-  <img src="">
+  <img src="https://github.com/Mortr0n/courses_proj/blob/75f8f1521ef7f3bf60b3cc0626e00419889fb85f/comments.PNG">
   </p>
   
