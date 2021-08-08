@@ -1,6 +1,5 @@
-
-<h1 align="center">Project for class making a quick app to add courses and comments using one to many and one to one relationships</h1>
 <h1 align="center"> Courses Project</h1>
+<h2 align="center">Project for class making a quick app to add courses and comments using one to many and one to one relationships</h2>
 <h2 align="center">
 Django full stack learning project 
   </h2>
